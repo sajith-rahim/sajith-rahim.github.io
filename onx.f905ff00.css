@@ -1,0 +1,102 @@
+.c-card{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    background-color: transparent !important;
+}
+.elevation {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.canvas {
+    border-radius: 4px;
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.952);
+}
+.button {
+   /* Reset */
+    background-color: transparent;
+    border-color: transparent;
+   /* Cursor */
+    cursor: pointer;
+   /* Size */
+    height: 32px;
+    width: 32px;
+   /* Used to position the inner */
+    position: relative;
+}
+.button__line {
+   /* Background color */
+    background-color: rgb(255, 253, 253);
+   /* Position */
+    position: absolute;
+   /* Size */
+    height: 1px;
+    width: 100%;
+}
+.button__line--first {
+   /* Position */
+    left: 0px;
+    top: 50%;
+    transform: translate(0%, -50%) rotate(45deg);
+   /* Size */
+    height: 1px;
+    width: 100%;
+}
+.button__line--second {
+   /* Position */
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%, 0%) rotate(45deg);
+   /* Size */
+    height: 100%;
+    width: 1px;
+}
+.predictions {
+    display: flex;
+    margin: auto 0;
+}
+.prediction-col {
+    padding: 0 2px;
+}
+.prediction-bar-container {
+    background: #505050;
+    height: 140px;
+    width: 10px;
+    position: relative;
+}
+.prediction-bar {
+    background: #707070;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+.prediction-number {
+    color: #bdbdbd;
+    font-size: 14px;
+    text-align: center;
+}
+.top-prediction .prediction-bar {
+    background:#eeae25;
+}
+.top-prediction .prediction-number {
+    color: #eeae25;
+    font-weight: bold;
+}
+.canvas-container {
+    position: relative;
+    margin: auto 0;
+}
+.container__docker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+   /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*# sourceMappingURL=/onx.f905ff00.css.map */
