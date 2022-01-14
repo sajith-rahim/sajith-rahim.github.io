@@ -251,56 +251,7 @@
 	<div class="overlay-slideNav"></div>
 
 	<script>
-		// Gen random data
-		const N = 33;
-	
-		const arcsData = [...Array(N).keys()].map(() => ({
-		  startLat: (Math.random() - 0.5) * 180,
-		  startLng: (Math.random() - 0.5) * 360,
-		  endLat: (Math.random() - 0.5) * 180,
-		  endLng: (Math.random() - 0.5) * 360,
-		  color: ['#f7471b', '#ffec3e', '#ffa53e', '#bd0000'][Math.round(Math.random() * 3)]
-		}));
-	
-		const Globe = new ThreeGlobe()
-		  .globeImageUrl('//unpkg.com/three-globe/example/img/earth-water.png')
-		  .arcsData(arcsData)
-		  .arcColor('color')
-		  .arcDashLength(0.9)
-		  .arcDashGap(4)
-		  .arcDashInitialGap(() => Math.random() * 5)
-		  .arcDashAnimateTime(800);
-	
-		// Setup renderer
-		const renderer = new THREE.WebGLRenderer();
-		renderer.setSize(window.innerWidth, window.innerHeight);
-		document.getElementById('globeViz').appendChild(renderer.domElement);
-	
-		// Setup scene
-		const scene = new THREE.Scene();
-		scene.add(Globe);
-		scene.add(new THREE.AmbientLight(0xbbbbbb));
-		scene.add(new THREE.DirectionalLight(0xffffff, 0.6));
-	
-		// Setup camera
-		const camera = new THREE.PerspectiveCamera();
-		camera.aspect = window.innerWidth/window.innerHeight;
-		camera.updateProjectionMatrix();
-		camera.position.z = 500;
-	
-		// Add camera controls
-		const tbControls = new THREE.TrackballControls(camera, renderer.domElement);
-		tbControls.minDistance = 101;
-		tbControls.rotateSpeed = 10;
-		tbControls.zoomSpeed = 0.8;
-	
-		// Kick-off renderer
-		(function animate() { // IIFE
-		  // Frame cycle
-		  tbControls.update();
-		  renderer.render(scene, camera);
-		  requestAnimationFrame(animate);
-		})();
+		const N=33;const arcsData=[...Array(N).keys()].map(()=>({startLat:(Math.random()-.5)*180,startLng:(Math.random()-.5)*360,endLat:(Math.random()-.5)*180,endLng:(Math.random()-.5)*360,color:["#f7471b","#ffec3e","#ffa53e","#bd0000"][Math.round(Math.random()*3)]}));const Globe=(new ThreeGlobe).globeImageUrl("//unpkg.com/three-globe/example/img/earth-water.png").arcsData(arcsData).arcColor("color").arcDashLength(.9).arcDashGap(4).arcDashInitialGap(()=>Math.random()*5).arcDashAnimateTime(800);const renderer=new THREE.WebGLRenderer;renderer.setSize(window.innerWidth,window.innerHeight);document.getElementById("globeViz").appendChild(renderer.domElement);const scene=new THREE.Scene;scene.add(Globe);scene.add(new THREE.AmbientLight(12303291));scene.add(new THREE.DirectionalLight(16777215,.6));const camera=new THREE.PerspectiveCamera;camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();camera.position.z=600;const tbControls=new THREE.TrackballControls(camera,renderer.domElement);tbControls.minDistance=101;tbControls.rotateSpeed=10;tbControls.zoomSpeed=.8;(function animate(){tbControls.update();renderer.render(scene,camera);requestAnimationFrame(animate)})();
 	  </script>
 	
 	<!-- JavaScripts -->
