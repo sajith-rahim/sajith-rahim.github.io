@@ -1,0 +1,5 @@
+#EXTM3U x-tvg-url="https://iptv-org.github.io/epg/guides/en/dishtv.in.xml"
+#EXTINF:-1 tvg-id="Mazavali_Manorama_HD.in" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Mazavali_Manorama_HD.png" group-title="Entertainment",Mazavali Manorama HD
+https://watchtvs.live/getm3u8/844/master.m3u8
+#EXTINF:-1 tvg-id="FlowersTV.in" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Flower_TV.png" group-title="Entertainment",Flower TV
+https://watchtvs.live/getm3u8/634/master.m3u8
