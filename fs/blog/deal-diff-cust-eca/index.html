@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" class="sl-theme-dark astro-5HCE7SGA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Log.</title>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/themes/dark.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/shoelace.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_astro/blog.775fe53b.css" />
+<link rel="stylesheet" href="/_astro/blog.f61f6c5e.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.f34e2a30.css" /></head>
+<body class="astro-5HCE7SGA">
+<div class="loader astro-5HCE7SGA">
+    <!-- https://codepen.io/supah/pen/BjYLdW --><div class="logo astro-7ZYOWDA2">
+  <svg version="1.0" viewBox="0 0 208 177" class="astro-7ZYOWDA2"><g fill="currentColor" class="astro-7ZYOWDA2"><path d="M83.5 53.1c-15.5 2.1-33.7 10.4-46.2 21-10.7 9.2-14.6 16.7-12.4 24.1 2.7 8.7 9.8 13.2 28.6 17.9 7.2 1.7 13.5 3.6 14.2 4.1.9.7-.6 2.7-5.3 7.2-5.8 5.6-6.5 6.7-6.2 9.6.2 2.2 1 3.5 2.4 4.1 3.1 1.1 14-2.9 20.2-7.4 5.3-3.9 7.1-7.2 5.6-10.4-1.3-3.1-1-3.8 3.6-6.7 5.9-3.7 16.2-7.6 20.4-7.6 4.1 0 4.8-.7 3.5-3.2-1-1.8-1.8-1.9-7.7-1.3-7 .7-15.9 4.2-24.3 9.6l-4.6 2.9-16.4-4c-20.8-5.2-26.4-7.7-28.5-12.5-2.1-5-.6-9 5.8-16.1 12.2-13.3 32.1-23.3 53.4-26.8 5.6-1 8.4 1.4 9.1 7.4.4 3.9-.1 5.4-3.6 11.2-4 6.5-4.4 9.1-1.6 10.2 3.4 1.2 11.1-13.1 10.2-18.9-1.8-11.2-8.5-16-20.2-14.4zm-4.1 70.8C80.4 125.4 69 134 66 134c-1.6 0 1.5-3.2 8-8.2 3.8-3 4.6-3.2 5.4-1.9zM177.6 91.1c-5.8 4.6-1.9 14.1 5.8 14.1 4.3 0 5.2-.5 7.2-4.4 4.2-8.2-5.5-15.6-13-9.7zM120.6 104.6c-2 5.3-3.4 10.4-3.1 11.4.7 2 3.8 3.6 4.3 2.1.8-2.4 6.5-10 10.1-13.6 3.5-3.4 4.7-3.9 8.2-3.8 4 .2 4 .2 2.6-2-2.3-3.4-6.1-4.4-10.1-2.4-3 1.4-3.6 1.4-4.6.1-2.4-2.8-3.8-1.3-7.4 8.2z" class="astro-7ZYOWDA2"></path></g></svg>
+</div>
+</div>
+<div x-data="init()" x-ref="pageModel" class="body astro-5HCE7SGA">
+    
+    <div class="header foreground-element astro-5HCE7SGA">
+        <div class="header-container astro-3EF6KSR2">
+
+<div class="logo-container astro-3EF6KSR2">
+    <div class="logo header-logo astro-3EF6KSR2" x-on:click="window.location.href = '/'">
+        <svg version="1.0" viewBox="0 0 208 177" class="astro-3EF6KSR2"><g fill="currentColor" class="astro-3EF6KSR2"><path d="M83.5 53.1c-15.5 2.1-33.7 10.4-46.2 21-10.7 9.2-14.6 16.7-12.4 24.1 2.7 8.7 9.8 13.2 28.6 17.9 7.2 1.7 13.5 3.6 14.2 4.1.9.7-.6 2.7-5.3 7.2-5.8 5.6-6.5 6.7-6.2 9.6.2 2.2 1 3.5 2.4 4.1 3.1 1.1 14-2.9 20.2-7.4 5.3-3.9 7.1-7.2 5.6-10.4-1.3-3.1-1-3.8 3.6-6.7 5.9-3.7 16.2-7.6 20.4-7.6 4.1 0 4.8-.7 3.5-3.2-1-1.8-1.8-1.9-7.7-1.3-7 .7-15.9 4.2-24.3 9.6l-4.6 2.9-16.4-4c-20.8-5.2-26.4-7.7-28.5-12.5-2.1-5-.6-9 5.8-16.1 12.2-13.3 32.1-23.3 53.4-26.8 5.6-1 8.4 1.4 9.1 7.4.4 3.9-.1 5.4-3.6 11.2-4 6.5-4.4 9.1-1.6 10.2 3.4 1.2 11.1-13.1 10.2-18.9-1.8-11.2-8.5-16-20.2-14.4zm-4.1 70.8C80.4 125.4 69 134 66 134c-1.6 0 1.5-3.2 8-8.2 3.8-3 4.6-3.2 5.4-1.9zM177.6 91.1c-5.8 4.6-1.9 14.1 5.8 14.1 4.3 0 5.2-.5 7.2-4.4 4.2-8.2-5.5-15.6-13-9.7zM120.6 104.6c-2 5.3-3.4 10.4-3.1 11.4.7 2 3.8 3.6 4.3 2.1.8-2.4 6.5-10 10.1-13.6 3.5-3.4 4.7-3.9 8.2-3.8 4 .2 4 .2 2.6-2-2.3-3.4-6.1-4.4-10.1-2.4-3 1.4-3.6 1.4-4.6.1-2.4-2.8-3.8-1.3-7.4 8.2z" class="astro-3EF6KSR2"></path></g></svg>
+    </div>
+    <div class="current-page astro-3EF6KSR2">
+<pre class="astro-3EF6KSR2">    <sl-icon style="margin-bottom: -0.15rem;" name="caret-right" class="astro-3EF6KSR2"></sl-icon> Web Log.
+</pre>
+    </div>
+</div>
+
+<div class="header-actions astro-3EF6KSR2">
+    <div class="action-buttons astro-3EF6KSR2">
+        <div class="astro-3EF6KSR2">
+            
+            <sl-popup placement="bottom-end" arrow="true" arrow-placement="anchor" x-ref="action_btn_popover" class="astro-3EF6KSR2">
+                <span slot="anchor" x-on:click="toggleHeaderActionPopover( $refs.pageModel._x_dataStack[0], $refs.action_btn_popover)" class="astro-3EF6KSR2">
+                    <sl-icon style="font-size: 1.5rem;" name="app-indicator" class="astro-3EF6KSR2"></sl-icon></span>
+                <div class="box astro-3EF6KSR2">
+                    <div class="header-popover astro-3EF6KSR2">
+                        <div class="heading astro-3EF6KSR2">
+                            <h4 class="astro-3EF6KSR2">Apps</h4>
+                        </div>
+                        <div class="apps astro-3EF6KSR2">
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/" style="color:antiquewhite;" class="astro-3EF6KSR2"><sl-icon name="house-fill" class="astro-3EF6KSR2"></sl-icon> Home </a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/encry" style="color:crimson;" x-bind:class="{'active-app' : window.location.href.includes('encry')}" class="astro-3EF6KSR2"><sl-icon name="fingerprint" class="astro-3EF6KSR2"></sl-icon> Encry</a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/blog" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('blog')}" class="astro-3EF6KSR2"><sl-icon name="card-heading" class="astro-3EF6KSR2"></sl-icon> Blog</a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/lofi" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('lofi')}" class="astro-3EF6KSR2"><sl-icon name="earbuds" class="astro-3EF6KSR2"></sl-icon> Lofi</a>
+                                    
+                                </div>
+
+                        </div>
+                        <div class="view-all-link astro-3EF6KSR2"></div>
+                    </div>
+                </div>
+            </sl-popup>
+            
+        </div>
+        <div class=" astro-3EF6KSR2">
+            <sl-icon disabled style="font-size: 1.5rem;" name="moon-fill" class="astro-3EF6KSR2"></sl-icon>
+        </div>
+    </div>
+    <!--div class="user-info">
+        <div class="">
+            <sl-icon style="font-size: 1.5rem;" name="geo-fill"></sl-icon>
+        </div>
+    </div-->
+</div>
+</div>
+    </div>
+    
+    <div class="sidebar foreground-element astro-5HCE7SGA" x-ref="side">
+        <div class="sidebar-container astro-SSFZSV2F">
+<!--pre>
+    {title}
+</pre-->
+
+    <div class="sidebar-content astro-SSFZSV2F">
+        <div class="sidebar-group sidebar-top astro-SSFZSV2F">
+            <div class="sidebar-icon astro-SSFZSV2F" x-on:click="toggleDrawer( $refs.pageModel._x_dataStack[0], $refs.side_drawer)">
+                <sl-icon name="chevron-double-right" class="astro-SSFZSV2F"></sl-icon>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/" style="color:antiquewhite;" class="astro-SSFZSV2F"><sl-icon name="house-fill" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/encry" style="color:crimson;" x-bind:class="{'active-app' : window.location.href.includes('encry')}" class="astro-SSFZSV2F"><sl-icon name="fingerprint" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/blog" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('blog')}" class="astro-SSFZSV2F"><sl-icon name="card-heading" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/lofi" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('lofi')}" class="astro-SSFZSV2F"><sl-icon name="earbuds" class="astro-SSFZSV2F"></sl-icon></a>
+                
+            </div>
+        </div>
+        <div class="sidebar-group sidebar-bottom astro-SSFZSV2F">
+            <sl-tooltip content="SR" class="astro-SSFZSV2F">
+                <sl-qr-code fill="rgb(0,120,240)" background="white" size="32" value="https://sajith-rahim.github.io" label="Portfolio" class="astro-SSFZSV2F"></sl-qr-code>
+              </sl-tooltip> 
+        </div>
+    
+</div>
+<sl-drawer label="" placement="start" class="drawer-header-actions astro-SSFZSV2F" x-ref="side_drawer" style="--size: 20vw; --sl-panel-background-color: var(--bg-color);">
+    <sl-icon-button class="new-window astro-SSFZSV2F" slot="header-actions" name="box-arrow-up-right"></sl-icon-button>
+    <div class="sidebar-content sidebar-inner astro-SSFZSV2F">
+        <div class="sidebar-xtended-group sidebar-top astro-SSFZSV2F">
+            <div class="element astro-SSFZSV2F">
+               <div class="details astro-SSFZSV2F">
+                <sl-icon name="house-fill" class="astro-SSFZSV2F"></sl-icon>
+                    
+                
+                <span class="astro-SSFZSV2F">HOME</span>
+               </div>
+               <div class="action astro-SSFZSV2F"></div>
+                    
+                </div> 
+            </div>
+        </div>
+        <div class="sidebar-group sidebar-bottom astro-SSFZSV2F">
+            BOTTOM
+        </div>
+    </sl-drawer></div>
+    <!--sl-button slot="footer" variant="primary">Close</sl-button-->
+    </div>
+    
+    <div class="page-content foreground-element astro-5HCE7SGA">
+        
+   <div style="margin: 0px 1.5em;" class="astro-7JJQPTXK">
+    <div class="post-copy-right astro-X2K5XUSE">
+    <div class="post-copy-right-left astro-X2K5XUSE">
+       <div class="post-details astro-X2K5XUSE">
+          <div class="post-name astro-X2K5XUSE">Dealing with difficult customers</div>
+          <div class="post-url astro-X2K5XUSE"><code class="astro-X2K5XUSE">http://localhost:3000/blog/deal-diff-cust-eca</code></div>
+       </div>
+       <div class="post-metadata astro-X2K5XUSE">
+          <div class="astro-X2K5XUSE">
+             <h6 class="astro-X2K5XUSE">Author</h6>
+             <p class="astro-X2K5XUSE">Admin</p>
+          </div>
+          <div class="astro-X2K5XUSE">
+             <h6 class="astro-X2K5XUSE">Posted on</h6>
+             <p class="astro-X2K5XUSE">Sat Apr 15 2023</p>
+          </div>
+          <div class="astro-X2K5XUSE">
+             <h6 class="astro-X2K5XUSE">Updated on</h6>
+             <p class="astro-X2K5XUSE">Sat Apr 15 2023</p>
+          </div>
+       </div>
+    </div>
+
+    <div class="post-copy-right-right astro-X2K5XUSE">
+       .
+    </div>
+ </div>
+    <div class="blog-post-wrapper astro-7JJQPTXK">
+        
+        <aside class="blog-post-sidebar astro-7JJQPTXK">
+            <div class="post-info foreground-element astro-7JJQPTXK">
+                <div class="post-info-element astro-CT6AWRUX">
+    <div class="focused-metric astro-CT6AWRUX">
+        
+
+        <img src="https://badge.sajith-rahim.workers.dev/?id=ddceca" alt="" class="astro-CT6AWRUX">
+    </div>
+    <div class="label astro-CT6AWRUX">
+        <sl-tag size="medium" pill="true"> <sl-icon name="eye"></sl-icon> &nbsp;Views</sl-tag>
+        <!--sl-tag size="medium" pill> <sl-icon name={icon}></sl-icon> &nbsp;{label}</sl-tag-->
+           
+
+
+    </div>
+</div>
+                <div class="post-info-element astro-CT6AWRUX">
+    <div class="focused-metric astro-CT6AWRUX">
+        1230
+
+        
+    </div>
+    <div class="label astro-CT6AWRUX">
+        <sl-tag size="medium" pill="true"> <sl-icon name="text-wrap"></sl-icon> &nbsp;Words</sl-tag>
+        <!--sl-tag size="medium" pill> <sl-icon name={icon}></sl-icon> &nbsp;{label}</sl-tag-->
+           
+
+
+    </div>
+</div>
+            </div>
+            <div class="post-actions foreground-element astro-7JJQPTXK">
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-7JJQPTXK"><sl-icon src="/cc-by.svg" class="astro-7JJQPTXK"></sl-icon></a>
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-7JJQPTXK"><sl-icon src="/cc-nc.svg" class="astro-7JJQPTXK"></sl-icon></a>
+                <a style="color:antiquewhite;" href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-7JJQPTXK"><sl-icon name="cc-circle" class="astro-7JJQPTXK"></sl-icon></a>
+               
+                <!--PostActionButton label="Share" icon="share-fill"/-->
+                <!--PostActionButton label="Report" icon="share-fill"/-->
+            </div>
+        </aside>
+        <main class="blog-post-content astro-7JJQPTXK">
+            <!--h1>{post.data.title}</h1-->
+        <!--time datetime={post.data.created_on.toISOString()}>
+            {post.data.created_on.toDateString()}
+        </time-->
+        
+        <h1 id="dealing-with-difficult-customers">Dealing with difficult customers</h1>
+<h1 id="the-eca-method"><strong>The ECA Method</strong></h1>
+<p>The ECA Method is a step-by-step strategy for dealing with difficult customers.</p>
+<p>It consists of three parts: <em>Empathy, Control, and Advocacy</em>.</p>
+<ul>
+<li>
+<p>The Empathy part is divided into 3 steps:</p>
+<p>First: listen, assess, and begin to take control of the situation.</p>
+<p>Second: let them know that you understand their situation.</p>
+<p>Third: show them that you understand and reassure them.</p>
+</li>
+<li>
+<p>The Control part is also divided into 3 steps:</p>
+<p>First: redirect the situation: try to guide the client from a negative to a positive state of mind.</p>
+<p>Second: Confirm what the client really wants.</p>
+<p>Third: Fix the situation.</p>
+</li>
+<li>
+<p>The Advocacy part is also divided into 3 steps:</p>
+<p>First: End the interaction in an efficient, polite, and friendly manner.</p>
+<p>Second: Choose your last words well to help turn your customer into a brand ambassador.</p>
+<p>Third: Finally, and if possible, follow up.</p>
+</li>
+</ul>
+<p><strong>Empathy:</strong></p>
+<ol>
+<li>Listen, evaluate, and control the de situation:</li>
+</ol>
+<ul>
+<li>Listen carefully to customers and make them feel heard.</li>
+<li>Ask questions to clarify any doubts about their complaints.</li>
+<li>Don’t take anything for granted; always ask for details if necessary.</li>
+<li>Take the opportunity to strengthen relationships with customers by
+listening and understanding their problems and then asking pertinent
+questions to take control of the situation.</li>
+</ul>
+<ol start="2">
+<li>Let them know you understand the situation:</li>
+</ol>
+<ul>
+<li>Mistakes or misunderstandings will inevitably occur; what is important is to accept responsibility and apologize for them.</li>
+<li>Showing empathy, understanding, and respect are the most effective ways to apologize.</li>
+<li>Kindness can change anyone’s mood; Mother Teresa of Calcutta had a
+powerful quote: “Kind words can be short and easy to speak, but their
+echoes are truly endless.”</li>
+<li>If we get caught up in the argument and respond in a similar way, we all end up losing.</li>
+<li>Kindness can have lasting effects on customer relationships; kind words can defuse the situation and make them extremely happy with you.</li>
+</ul>
+<ol start="3">
+<li>Show that you understand the situation and reassure the customer:</li>
+</ol>
+<ul>
+<li>
+<p>Showing empathy is essential when dealing with an upset customer.</p>
+</li>
+<li>
+<p>Pointing blame and telling them they should talk to another department can worsen the situation.</p>
+</li>
+<li>
+<p>The proper way to acknowledge the situation and reassure them that you will help them is divided into 3 steps:</p>
+<p>First: apologize for the situation.</p>
+<p>Second, let them know you will do everything possible to help them resolve the situation.</p>
+<p>Third: let them know that you are working to resolve the situation and
+tell them approximately how long they will have to wait for a solution.</p>
+</li>
+</ul>
+<p><strong>Take Control</strong></p>
+<ol>
+<li>Redirect the situation:</li>
+</ol>
+<ul>
+<li>It is difficult to stay angry and rude in front of a person who treats
+you with a lot of kindness and respect and wants to help you. Therefore, it is essential that we use this idea to change the customer’s frame of mind.</li>
+<li>Empathy, kindness, and a willingness to help can redirect an angry situation.</li>
+<li>Positive language is critical when dealing with difficult customers; it helps redirect the situation.</li>
+<li>The words we choose can have a significant impact on how the customer
+reacts and will help redirect their frustration into something more
+productive.</li>
+<li>Positive language not only spreads happiness but also has personal
+benefits, such as receiving positive feedback from customers and bosses, as well as earning good online reviews for the business itself.</li>
+</ul>
+<ol start="2">
+<li>Confirm what they want:</li>
+</ol>
+<ul>
+<li>It’s essential always to confirm what customers want, even if it seems obvious.</li>
+<li>It is especially important with difficult customers to avoid
+misunderstandings and prevent them from exploding. It can help avoid a
+situation where you are unhappy with the outcome.</li>
+<li>When dealing with difficult customers, special care must be taken in
+how we confirm their wants and needs to prevent them from becoming angry or explosive.</li>
+<li>Asking questions like “What can I do today to make you happy?” or
+confirming the customer’s request by saying something like “I want to
+make sure we get this resolved and you are as happy as possible…” are
+good ways to make sure the customer gets what they need, and will ensure that all requests are understood correctly by both parties involved.</li>
+</ul>
+<ol start="3">
+<li>Fix the situation:</li>
+</ol>
+<ul>
+<li>Solving difficult customer situations requires understanding, empathy, and offering options.</li>
+<li>The best way to handle a situation where you cannot satisfy the
+customer’s request is to offer alternatives they feel in control of.</li>
+<li>It is essential not to make clients feel guilty or defensive; instead,
+show them sympathy for their plight and try your best to find an
+amicable solution that works for both parties.</li>
+<li>A real-life example of this was when a store accepted a $450 camera
+back even though it was past its 14-day return deadline, and the
+customer bought $5,000 worth of photography equipment instead.</li>
+<li>We must always keep an open mind to the possible solutions we can offer customers. More often than we think, we can find solutions that benefit the customer and our company.</li>
+</ul>
+<p><strong>Advocacy</strong></p>
+<ol>
+<li>Turn upset customers into advocates of your brand:</li>
+</ol>
+<ul>
+<li>
+<p>It is essential to have a plan to adequately end a conversation with a difficult customer.</p>
+</li>
+<li>
+<p>It is important to emphasize our apology and show empathy again.</p>
+</li>
+<li>
+<p>Solving the problem does not always mean the emotion will go away. We
+need to understand that the customer may still look upset even if we
+help them.</p>
+</li>
+<li>
+<p>Three principles to follow when ending a conversation:</p>
+<p>Reiterate apology and empathy.</p>
+<p>Thank them for reaching out and invite them to do so again.</p>
+<p>Ask if there is anything else that you can do for them.</p>
+<ul>
+<li>You must differentiate yourself from other customer service professionals and leave a positive impression.</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>The right way to end the conversation with an unhappy or angry customer:</li>
+</ol>
+<ul>
+<li>Mistakes can happen in any business, but they are not the primary cause of customer churn.</li>
+<li>Lack of interest on the company’s part to solve a problem, poor
+customer service, or lack of help are the main reasons why customers
+decide not to continue working with a company.</li>
+<li>If a customer receives exceptional attention when they have a problem
+or are angry, they are more likely to remain loyal and even become a
+brand ambassador.</li>
+<li>We saw this in the case of the customer who wanted to return the $450
+camera. Although he was initially treated with indifference, he was then given extraordinary treatment and ended up buying eleven times his
+original investment.</li>
+<li>Exceptional customer service can turn an angry customer into a loyal customer and brand ambassador.</li>
+<li>Exceptional customer service can create exceptional situations for your company and you.</li>
+</ul>
+<ol start="3">
+<li>Turn upset customers into advocates of your brand Part II - Follow-Up:</li>
+</ol>
+<ul>
+<li>Whenever possible, it is essential to take a final step to change the
+status of demanding customers and turn them into brand ambassadors. This final action is to follow up with customers.</li>
+<li>This can be done through a simple call or email to check if the
+solution provided is working for them and act accordingly before things
+get worse.</li>
+<li>If the customer is happy with the solution, they will be even happier because of the follow-up.</li>
+<li>Depending on the company policy and industry, following up with
+customers may not always be possible. If it is possible, we should do
+it.</li>
+<li>Following up shows empathy and that you care about your customers.</li>
+<li>Small details in customer service can improve customer perception and
+turn a good customer service department into an exceptional one.</li>
+</ul>
+<h2 id="files">Files:</h2>
+<hr>
+<p><a href="Dealing%20with%20difficult%20customers%200a7171c2db8b41f9bc7e5719c48c6a22/CS02E-TheECAMethod-Notes-GustavoEscobar.pdf">CS02E+-+The+ECA+Method+-Notes+-+Gustavo+Escobar.pdf</a></p>
+<p><a href="Dealing%20with%20difficult%20customers%200a7171c2db8b41f9bc7e5719c48c6a22/CS02E-TheECAMethodChecklist-GustavoEscobar.pdf">CS02E+-+The+ECA+Method+Checklist+-+Gustavo+Escobar.pdf</a></p>
+    
+        
+        </main>
+      
+           
+    </div>
+   </div>
+   <div class="share-qr astro-7JJQPTXK">
+    <sl-tooltip content="Share via QR" class="astro-7JJQPTXK">
+        <sl-qr-code fill="rgb(0,120,240)" background="white" size="64" value="http://localhost:3000/blog/deal-diff-cust-eca" label="Save this QR to share this post" class="astro-7JJQPTXK"></sl-qr-code>
+    </sl-tooltip>   
+</div>
+
+    
+        
+	
+
+    </div>
+    
+    <div class="footer foreground-element astro-5HCE7SGA">
+    <div class="footer-wrapper astro-SZ7XMLTE">
+<div class="footer-left astro-SZ7XMLTE">
+    <a style="color:antiquewhite;" href="https://github.com/sajith-rahim" class="astro-SZ7XMLTE"><sl-icon name="github" class="astro-SZ7XMLTE"></sl-icon></a>
+</div>
+<div class="footer-center astro-SZ7XMLTE">
+    <span class="footer-copyright astro-SZ7XMLTE"><sl-icon name="c-circle" class="astro-SZ7XMLTE"></sl-icon>&nbsp; Copyright 2023</span>
+</div>
+<div class="footer-right astro-SZ7XMLTE">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon src="/cc-by.svg" class="astro-SZ7XMLTE"></sl-icon></a>
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon src="/cc-nc.svg" class="astro-SZ7XMLTE"></sl-icon></a>
+    <a style="color:antiquewhite;" href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon name="cc-circle" class="astro-SZ7XMLTE"></sl-icon></a>
+   
+    
+</div>
+</div>
+    </div>
+</div>
+
+   
+
+
+
+
+<script>
+
+
+
+setTimeout(() => { document.querySelector('.loader').classList.add('hidden') }, 3500)
+
+function init() {
+
+    let page = {
+        metadata: {
+            title: "Knowledge Base",
+        },
+        state: {
+
+            sideBarExpanded: false,
+            headerActionPopover: false
+
+
+        },
+
+        handleClick: (e, m) => {
+            //alert('Hey')
+        },
+        openDrawer: (_pageModel, drawer) => {
+            if (_pageModel.state.sideBarExpanded)
+                return
+            drawer.show();
+            _pageModel.state.sideBarExpanded = true;
+        },
+        closeDrawer: (_pageModel, drawer) => {
+            if (!_pageModel.state.sideBarExpanded)
+                return
+            drawer.hide();
+            _pageModel.state.sideBarExpanded = false;
+        },
+        toggleDrawer: (_pageModel, drawer) => {
+            _pageModel.state.sideBarExpanded ? drawer.hide() :
+                drawer.show();
+            _pageModel.state.sideBarExpanded = !_pageModel.state.sideBarExpanded;
+        },
+        toggleHeaderActionPopover: (_pageModel, actionPopover) => {
+            debugger;
+            _pageModel.state.headerActionPopover ? actionPopover.active = false :
+                actionPopover.active = true;
+
+            _pageModel.state.headerActionPopover = !_pageModel.state.headerActionPopover;
+            actionPopover.distance = 2;
+        },
+        home:{
+            data:{
+                time_text: '' 
+            }
+        },
+        /* Lofi*/
+        lofi: {
+            entities: {
+                trackPlayer: undefined,
+                bgPlayer: undefined
+            },
+            state: {
+                showTaskListLoader: false,
+                trackPlayerCurrentTrack: '',
+                bgPlayerCurrentTrack: ''
+            },
+            data: {
+                bgPlayList : [
+                        {
+                            title: "Rain",
+                            src: '/rain_forest.mp3',
+                            howl: null
+                        },
+                        {
+                            title: "Wind",
+                            src: '/wind.mp3',
+                            howl: null
+                        }
+                    ],
+                tasklist: [
+                    { id: 'zfygu', task_label: 'Task 1', status: 'TO DO' },
+                    { id: 'm6a7i', task_label: 'Task 2', status: 'TO DO' },
+                    { id: 'fwzuq', task_label: 'Task 3', status: 'DONE' }
+                ],
+            },
+            initTrackPlayer: (_lofi) => {
+
+                try {
+                    debugger;
+                    let player = new Player();
+
+                    player.loadPlayList([
+                        {
+                            title: "Ya Adheeman",
+                            src: 'https://files.thenaatsharif.com/downloads/ahmed-bukhatir/ya-adheeman.mp3',
+                            howl: null
+                        }
+                    ])
+
+                    _lofi.entities.trackPlayer = player;
+                } catch (e) {
+                    console.log("[FATAL] Failed to initialize Player!")
+                }
+            },
+            initBgPlayer: (_lofi) => {
+
+                try {
+                    debugger;
+                    let _player = new Player();
+
+                    _player.loadPlayList(_lofi.data.bgPlayList);
+
+                    _lofi.entities.bgPlayer = _player;
+                } catch (e) {
+                    console.log("[FATAL] Failed to initialize Background Player!")
+                }
+            },
+            playerAction: (pageModel, event) => {
+                debugger;
+                const _lofi = pageModel.lofi;
+
+                const { player, action, track } = event;
+
+                if (player == 'track') {
+                    _lofi.handleTrackPlayerAction(_lofi, action, track)
+                } else if (player == 'bg') {
+                    _lofi.handleBgPlayerAction(_lofi, action, track)
+                }
+
+
+            },
+
+            handleTrackPlayerAction(_lofi, action, track) {
+                if (!(_lofi.entities.trackPlayer)) {
+                    _lofi.initTrackPlayer(_lofi, action);
+                }
+
+                switch (action) {
+                    case 'play':
+                        _lofi.entities.trackPlayer.play({ index: 0 })
+                       setTimeout(()=>{
+                        _lofi.state.trackPlayerCurrentTrack = _lofi.entities.bgPlayer.getCurrentTrackInfo().title;
+                       }, 3000);
+                        break;
+                    case 'stop':
+                        _lofi.entities.trackPlayer.stop();
+                        _lofi.state.trackPlayerCurrentTrack = '';
+                        break;
+
+                    default:
+                        break;
+                }
+
+            },
+            handleBgPlayerAction(_lofi, action, track) {
+
+                if (!(_lofi.entities.bgPlayer)) {
+                    _lofi.initBgPlayer(_lofi, action);
+                }
+
+                if(_lofi.entities.bgPlayer.isPlaying()){
+                    action='stop';
+                }
+
+                const idx = _lofi.data.bgPlayList.findIndex((t) => t.title === track);
+
+                switch (action) {
+                    case 'play':
+                        _lofi.entities.bgPlayer.stop()
+                        _lofi.entities.bgPlayer.play({ index: idx })
+                        _lofi.state.bgPlayerCurrentTrack = _lofi.entities.bgPlayer.getCurrentTrackInfo().title;
+                        break;
+                    case 'stop':
+                        _lofi.entities.bgPlayer.stop()
+                        _lofi.state.bgPlayerCurrentTrack = '';
+                        break;
+
+                    default:
+                        break;
+                }
+            },
+
+            addTask: (pageModel, input) => {
+                debugger;
+                console.log(pageModel, input);
+
+                newTaskId = (Math.random() + 1).toString(36).substring(7);
+            },
+            updateTask: (pageModel, task) => {
+                debugger;
+                console.log(pageModel, task)
+                pageModel.lofi.state.showTaskListLoader = true;
+                let tasklist = pageModel.lofi.data.tasklist || [];
+                _task = tasklist.filter(t => t.id == task.id);
+                _task.status = 'DONE';
+                setTimeout(() => { pageModel.lofi.state.showTaskListLoader = false; }, 3000)
+            }
+        },
+        /* ENCRY */
+        encry:{   
+            crypto:{
+                engine: typeof CryptoJS != 'undefined' ? CryptoJS.AES : null
+            },
+            state: {
+                isEncrypting : false,
+                isDecrypting : false
+            },
+            encrypt :{
+                text: '',
+                password: '',
+                algo: 'l-aes'
+            },
+            decrypt :{
+                text: '',
+                password: '',
+                algo: 'l-aes'
+            },
+            generateSecureKey: (pageModel, key)=>{
+                const encry = pageModel.encry;
+                try {
+                    var buf = new Uint8Array(12);
+                    window.crypto.getRandomValues(buf);
+                    encry.encrypt.password = btoa(String.fromCharCode.apply(null, buf));
+                } catch (error) {
+                    
+                }
+                
+            },
+            doEncrypt: async(pageModel)=>{
+                let encry = pageModel.encry;
+                encry.state.isEncrypting = true;
+                const {text, password, algo} = encry.encrypt;
+                debugger;
+                switch (algo) {
+                    case 'l-aes':
+                        const enc = encry.crypto.engine.encrypt(text, password).toString();
+                        encry.encrypt.text = encry.decrypt.text = enc;
+                        encry.encrypt.password = '';
+                        break;
+                    case 'cf-aes':
+                        let res = await encry.cfEncrypt(text, password);
+                        try {
+                            encry.encrypt.text = encry.decrypt.text = res.content;
+                            encry.encrypt.password = '';
+                        } catch (error) {
+                            encry.encrypt.text = text;
+                            encry.encrypt.password = '';
+                        }
+                    break;
+                
+                    default:
+                        break;
+                }
+                encry.state.isEncrypting = false;
+            },
+            cfEncrypt: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                    "action" : "ENCRYPT"
+                });
+                return await fetch('https://encrypt.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            },
+            doDecrypt: async(pageModel)=>{
+                let encry = pageModel.encry;
+                encry.state.isDecrypting = true;
+                const {text, password, algo} = encry.decrypt;
+                debugger;
+                switch (algo) {
+                    case 'l-aes':
+                        const decoded = encry.crypto.engine.decrypt(text, password).toString(CryptoJS.enc.Utf8);
+                        encry.decrypt.text = decoded;
+                        encry.decrypt.password = '';
+                        break;
+                    case 'cf-aes':
+                        let res = await encry.cfDecrypt(text, password);
+                        try {
+                            encry.decrypt.text = res.content;
+                            encry.decrypt.password = '';
+                        } catch (error) {
+                            encry.decrypt.text = text;
+                            encry.encrypt.password = '';
+                        }
+                    break;
+                
+                    default:
+                        break;
+                }
+                encry.state.isDecrypting = false;
+            },
+            cfDecrypt: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                    "action" : "DECRYPT"
+                });
+                return await fetch('https://encrypt.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            }
+        },
+        scratchpad:{
+            crypto:{
+                engine: typeof CryptoJS != 'undefined' ? CryptoJS.AES : null
+            },
+            state: {
+                currentNoteKey: '',
+                currentNotePassword: ''
+            },
+            data: {
+                BASE_KEY:'SCRATCH_BASE_KEY',
+                BASE_PASSWORD : 'F0Jk8HKsb15JAGGD',
+                note_content: ''
+            },
+            decryptNote: async(pageModel)=>{
+                debugger;
+                const pad = pageModel.scratchpad;
+                const password = pad.state.currentNotePassword != '*' ? pad.state.currentNotePassword : pad.data.BASE_PASSWORD;
+                let note = await pad.getNote(pad.data.BASE_KEY);
+
+                pad.data.note_content = '' + pad.crypto.engine.decrypt(note.content,password).toString(CryptoJS.enc.Utf8);
+
+
+            },
+            getNote: async ( key)=>{
+                return await fetch(`https://scratchpad.sajith-rahim.workers.dev?key=${key}`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            },
+            syncNote: async(pageModel, event)=>{
+                debugger;
+                const pad = pageModel.scratchpad;
+                const pass = pad.state.currentNotePassword != '*' ? pad.state.currentNotePassword : pad.data.BASE_PASSWORD;
+                let content = pad.crypto.engine.encrypt('' + event.target.value, pass).toString();
+                const key = pad.state.currentNoteKey != '' ? pad.state.currentNoteKey : pad.data.BASE_KEY;
+                await pad.postNote(content, key )
+            },
+            postNote: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                });
+                return await fetch('https://scratchpad.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            }
+        }
+
+    }
+
+    window.sr_dev_refs = page || {};
+    return page;
+}
+
+</script>
+
+    </body></html>
