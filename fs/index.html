@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="sl-theme-dark astro-5HCE7SGA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Dev.</title>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/themes/dark.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/shoelace.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/_astro/blog.775fe53b.css" />
+<link rel="stylesheet" href="/_astro/index.f3ac8d7c.css" />
+<link rel="stylesheet" href="/_astro/blog.f61f6c5e.css" /></head>
+<body class="astro-5HCE7SGA">
+<div class="loader astro-5HCE7SGA">
+    <!-- https://codepen.io/supah/pen/BjYLdW --><div class="logo astro-7ZYOWDA2">
+  <svg version="1.0" viewBox="0 0 208 177" class="astro-7ZYOWDA2"><g fill="currentColor" class="astro-7ZYOWDA2"><path d="M83.5 53.1c-15.5 2.1-33.7 10.4-46.2 21-10.7 9.2-14.6 16.7-12.4 24.1 2.7 8.7 9.8 13.2 28.6 17.9 7.2 1.7 13.5 3.6 14.2 4.1.9.7-.6 2.7-5.3 7.2-5.8 5.6-6.5 6.7-6.2 9.6.2 2.2 1 3.5 2.4 4.1 3.1 1.1 14-2.9 20.2-7.4 5.3-3.9 7.1-7.2 5.6-10.4-1.3-3.1-1-3.8 3.6-6.7 5.9-3.7 16.2-7.6 20.4-7.6 4.1 0 4.8-.7 3.5-3.2-1-1.8-1.8-1.9-7.7-1.3-7 .7-15.9 4.2-24.3 9.6l-4.6 2.9-16.4-4c-20.8-5.2-26.4-7.7-28.5-12.5-2.1-5-.6-9 5.8-16.1 12.2-13.3 32.1-23.3 53.4-26.8 5.6-1 8.4 1.4 9.1 7.4.4 3.9-.1 5.4-3.6 11.2-4 6.5-4.4 9.1-1.6 10.2 3.4 1.2 11.1-13.1 10.2-18.9-1.8-11.2-8.5-16-20.2-14.4zm-4.1 70.8C80.4 125.4 69 134 66 134c-1.6 0 1.5-3.2 8-8.2 3.8-3 4.6-3.2 5.4-1.9zM177.6 91.1c-5.8 4.6-1.9 14.1 5.8 14.1 4.3 0 5.2-.5 7.2-4.4 4.2-8.2-5.5-15.6-13-9.7zM120.6 104.6c-2 5.3-3.4 10.4-3.1 11.4.7 2 3.8 3.6 4.3 2.1.8-2.4 6.5-10 10.1-13.6 3.5-3.4 4.7-3.9 8.2-3.8 4 .2 4 .2 2.6-2-2.3-3.4-6.1-4.4-10.1-2.4-3 1.4-3.6 1.4-4.6.1-2.4-2.8-3.8-1.3-7.4 8.2z" class="astro-7ZYOWDA2"></path></g></svg>
+</div>
+</div>
+<div x-data="init()" x-ref="pageModel" class="body astro-5HCE7SGA">
+    
+    <div class="header foreground-element astro-5HCE7SGA">
+        <div class="header-container astro-3EF6KSR2">
+
+<div class="logo-container astro-3EF6KSR2">
+    <div class="logo header-logo astro-3EF6KSR2" x-on:click="window.location.href = '/'">
+        <svg version="1.0" viewBox="0 0 208 177" class="astro-3EF6KSR2"><g fill="currentColor" class="astro-3EF6KSR2"><path d="M83.5 53.1c-15.5 2.1-33.7 10.4-46.2 21-10.7 9.2-14.6 16.7-12.4 24.1 2.7 8.7 9.8 13.2 28.6 17.9 7.2 1.7 13.5 3.6 14.2 4.1.9.7-.6 2.7-5.3 7.2-5.8 5.6-6.5 6.7-6.2 9.6.2 2.2 1 3.5 2.4 4.1 3.1 1.1 14-2.9 20.2-7.4 5.3-3.9 7.1-7.2 5.6-10.4-1.3-3.1-1-3.8 3.6-6.7 5.9-3.7 16.2-7.6 20.4-7.6 4.1 0 4.8-.7 3.5-3.2-1-1.8-1.8-1.9-7.7-1.3-7 .7-15.9 4.2-24.3 9.6l-4.6 2.9-16.4-4c-20.8-5.2-26.4-7.7-28.5-12.5-2.1-5-.6-9 5.8-16.1 12.2-13.3 32.1-23.3 53.4-26.8 5.6-1 8.4 1.4 9.1 7.4.4 3.9-.1 5.4-3.6 11.2-4 6.5-4.4 9.1-1.6 10.2 3.4 1.2 11.1-13.1 10.2-18.9-1.8-11.2-8.5-16-20.2-14.4zm-4.1 70.8C80.4 125.4 69 134 66 134c-1.6 0 1.5-3.2 8-8.2 3.8-3 4.6-3.2 5.4-1.9zM177.6 91.1c-5.8 4.6-1.9 14.1 5.8 14.1 4.3 0 5.2-.5 7.2-4.4 4.2-8.2-5.5-15.6-13-9.7zM120.6 104.6c-2 5.3-3.4 10.4-3.1 11.4.7 2 3.8 3.6 4.3 2.1.8-2.4 6.5-10 10.1-13.6 3.5-3.4 4.7-3.9 8.2-3.8 4 .2 4 .2 2.6-2-2.3-3.4-6.1-4.4-10.1-2.4-3 1.4-3.6 1.4-4.6.1-2.4-2.8-3.8-1.3-7.4 8.2z" class="astro-3EF6KSR2"></path></g></svg>
+    </div>
+    <div class="current-page astro-3EF6KSR2">
+<pre class="astro-3EF6KSR2">    <sl-icon style="margin-bottom: -0.15rem;" name="caret-right" class="astro-3EF6KSR2"></sl-icon> SR Dev.
+</pre>
+    </div>
+</div>
+
+<div class="header-actions astro-3EF6KSR2">
+    <div class="action-buttons astro-3EF6KSR2">
+        <div class="astro-3EF6KSR2">
+            
+            <sl-popup placement="bottom-end" arrow="true" arrow-placement="anchor" x-ref="action_btn_popover" class="astro-3EF6KSR2">
+                <span slot="anchor" x-on:click="toggleHeaderActionPopover( $refs.pageModel._x_dataStack[0], $refs.action_btn_popover)" class="astro-3EF6KSR2">
+                    <sl-icon style="font-size: 1.5rem;" name="app-indicator" class="astro-3EF6KSR2"></sl-icon></span>
+                <div class="box astro-3EF6KSR2">
+                    <div class="header-popover astro-3EF6KSR2">
+                        <div class="heading astro-3EF6KSR2">
+                            <h4 class="astro-3EF6KSR2">Apps</h4>
+                        </div>
+                        <div class="apps astro-3EF6KSR2">
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/" style="color:antiquewhite;" class="astro-3EF6KSR2"><sl-icon name="house-fill" class="astro-3EF6KSR2"></sl-icon> Home </a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/encry" style="color:crimson;" x-bind:class="{'active-app' : window.location.href.includes('encry')}" class="astro-3EF6KSR2"><sl-icon name="fingerprint" class="astro-3EF6KSR2"></sl-icon> Encry</a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/blog" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('blog')}" class="astro-3EF6KSR2"><sl-icon name="card-heading" class="astro-3EF6KSR2"></sl-icon> Blog</a>
+                                </div>
+                                <div class="app-icon astro-3EF6KSR2">
+                                    <a href="/lofi" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('lofi')}" class="astro-3EF6KSR2"><sl-icon name="earbuds" class="astro-3EF6KSR2"></sl-icon> Lofi</a>
+                                    
+                                </div>
+
+                        </div>
+                        <div class="view-all-link astro-3EF6KSR2"></div>
+                    </div>
+                </div>
+            </sl-popup>
+            
+        </div>
+        <div class=" astro-3EF6KSR2">
+            <sl-icon disabled style="font-size: 1.5rem;" name="moon-fill" class="astro-3EF6KSR2"></sl-icon>
+        </div>
+    </div>
+    <!--div class="user-info">
+        <div class="">
+            <sl-icon style="font-size: 1.5rem;" name="geo-fill"></sl-icon>
+        </div>
+    </div-->
+</div>
+</div>
+    </div>
+    
+    <div class="sidebar foreground-element astro-5HCE7SGA" x-ref="side">
+        <div class="sidebar-container astro-SSFZSV2F">
+<!--pre>
+    {title}
+</pre-->
+
+    <div class="sidebar-content astro-SSFZSV2F">
+        <div class="sidebar-group sidebar-top astro-SSFZSV2F">
+            <div class="sidebar-icon astro-SSFZSV2F" x-on:click="toggleDrawer( $refs.pageModel._x_dataStack[0], $refs.side_drawer)">
+                <sl-icon name="chevron-double-right" class="astro-SSFZSV2F"></sl-icon>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/" style="color:antiquewhite;" class="astro-SSFZSV2F"><sl-icon name="house-fill" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/encry" style="color:crimson;" x-bind:class="{'active-app' : window.location.href.includes('encry')}" class="astro-SSFZSV2F"><sl-icon name="fingerprint" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/blog" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('blog')}" class="astro-SSFZSV2F"><sl-icon name="card-heading" class="astro-SSFZSV2F"></sl-icon></a>
+            </div>
+            <div class="sidebar-icon astro-SSFZSV2F">
+                <a href="/lofi" style="color:antiquewhite;" x-bind:class="{'active-app' : window.location.href.includes('lofi')}" class="astro-SSFZSV2F"><sl-icon name="earbuds" class="astro-SSFZSV2F"></sl-icon></a>
+                
+            </div>
+        </div>
+        <div class="sidebar-group sidebar-bottom astro-SSFZSV2F">
+            <sl-tooltip content="SR" class="astro-SSFZSV2F">
+                <sl-qr-code fill="rgb(0,120,240)" background="white" size="32" value="https://sajith-rahim.github.io" label="Portfolio" class="astro-SSFZSV2F"></sl-qr-code>
+              </sl-tooltip> 
+        </div>
+    
+</div>
+<sl-drawer label="" placement="start" class="drawer-header-actions astro-SSFZSV2F" x-ref="side_drawer" style="--size: 20vw; --sl-panel-background-color: var(--bg-color);">
+    <sl-icon-button class="new-window astro-SSFZSV2F" slot="header-actions" name="box-arrow-up-right"></sl-icon-button>
+    <div class="sidebar-content sidebar-inner astro-SSFZSV2F">
+        <div class="sidebar-xtended-group sidebar-top astro-SSFZSV2F">
+            <div class="element astro-SSFZSV2F">
+               <div class="details astro-SSFZSV2F">
+                <sl-icon name="house-fill" class="astro-SSFZSV2F"></sl-icon>
+                    
+                
+                <span class="astro-SSFZSV2F">HOME</span>
+               </div>
+               <div class="action astro-SSFZSV2F"></div>
+                    
+                </div> 
+            </div>
+        </div>
+        <div class="sidebar-group sidebar-bottom astro-SSFZSV2F">
+            BOTTOM
+        </div>
+    </sl-drawer></div>
+    <!--sl-button slot="footer" variant="primary">Close</sl-button-->
+    </div>
+    
+    <div class="page-content foreground-element astro-5HCE7SGA">
+        
+
+	<main class="astro-J7PV25F6">
+		<div class="clock astro-J7PV25F6">
+			<span x-ref="clock" class="astro-J7PV25F6">∞</span>
+		</div>
+		
+	</main>
+
+    </div>
+    
+    <div class="footer foreground-element astro-5HCE7SGA">
+    <div class="footer-wrapper astro-SZ7XMLTE">
+<div class="footer-left astro-SZ7XMLTE">
+    <a style="color:antiquewhite;" href="https://github.com/sajith-rahim" class="astro-SZ7XMLTE"><sl-icon name="github" class="astro-SZ7XMLTE"></sl-icon></a>
+</div>
+<div class="footer-center astro-SZ7XMLTE">
+    <span class="footer-copyright astro-SZ7XMLTE"><sl-icon name="c-circle" class="astro-SZ7XMLTE"></sl-icon>&nbsp; Copyright 2023</span>
+</div>
+<div class="footer-right astro-SZ7XMLTE">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon src="/cc-by.svg" class="astro-SZ7XMLTE"></sl-icon></a>
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon src="/cc-nc.svg" class="astro-SZ7XMLTE"></sl-icon></a>
+    <a style="color:antiquewhite;" href="https://creativecommons.org/licenses/by-nc/4.0/" class="astro-SZ7XMLTE"><sl-icon name="cc-circle" class="astro-SZ7XMLTE"></sl-icon></a>
+   
+    
+</div>
+</div>
+    </div>
+</div>
+
+   
+
+
+
+
+<script>
+
+
+
+setTimeout(() => { document.querySelector('.loader').classList.add('hidden') }, 3500)
+
+function init() {
+
+    let page = {
+        metadata: {
+            title: "Knowledge Base",
+        },
+        state: {
+
+            sideBarExpanded: false,
+            headerActionPopover: false
+
+
+        },
+
+        handleClick: (e, m) => {
+            //alert('Hey')
+        },
+        openDrawer: (_pageModel, drawer) => {
+            if (_pageModel.state.sideBarExpanded)
+                return
+            drawer.show();
+            _pageModel.state.sideBarExpanded = true;
+        },
+        closeDrawer: (_pageModel, drawer) => {
+            if (!_pageModel.state.sideBarExpanded)
+                return
+            drawer.hide();
+            _pageModel.state.sideBarExpanded = false;
+        },
+        toggleDrawer: (_pageModel, drawer) => {
+            _pageModel.state.sideBarExpanded ? drawer.hide() :
+                drawer.show();
+            _pageModel.state.sideBarExpanded = !_pageModel.state.sideBarExpanded;
+        },
+        toggleHeaderActionPopover: (_pageModel, actionPopover) => {
+            debugger;
+            _pageModel.state.headerActionPopover ? actionPopover.active = false :
+                actionPopover.active = true;
+
+            _pageModel.state.headerActionPopover = !_pageModel.state.headerActionPopover;
+            actionPopover.distance = 2;
+        },
+        home:{
+            data:{
+                time_text: '' 
+            }
+        },
+        /* Lofi*/
+        lofi: {
+            entities: {
+                trackPlayer: undefined,
+                bgPlayer: undefined
+            },
+            state: {
+                showTaskListLoader: false,
+                trackPlayerCurrentTrack: '',
+                bgPlayerCurrentTrack: ''
+            },
+            data: {
+                bgPlayList : [
+                        {
+                            title: "Rain",
+                            src: '/rain_forest.mp3',
+                            howl: null
+                        },
+                        {
+                            title: "Wind",
+                            src: '/wind.mp3',
+                            howl: null
+                        }
+                    ],
+                tasklist: [
+                    { id: 'zfygu', task_label: 'Task 1', status: 'TO DO' },
+                    { id: 'm6a7i', task_label: 'Task 2', status: 'TO DO' },
+                    { id: 'fwzuq', task_label: 'Task 3', status: 'DONE' }
+                ],
+            },
+            initTrackPlayer: (_lofi) => {
+
+                try {
+                    debugger;
+                    let player = new Player();
+
+                    player.loadPlayList([
+                        {
+                            title: "Ya Adheeman",
+                            src: 'https://files.thenaatsharif.com/downloads/ahmed-bukhatir/ya-adheeman.mp3',
+                            howl: null
+                        }
+                    ])
+
+                    _lofi.entities.trackPlayer = player;
+                } catch (e) {
+                    console.log("[FATAL] Failed to initialize Player!")
+                }
+            },
+            initBgPlayer: (_lofi) => {
+
+                try {
+                    debugger;
+                    let _player = new Player();
+
+                    _player.loadPlayList(_lofi.data.bgPlayList);
+
+                    _lofi.entities.bgPlayer = _player;
+                } catch (e) {
+                    console.log("[FATAL] Failed to initialize Background Player!")
+                }
+            },
+            playerAction: (pageModel, event) => {
+                debugger;
+                const _lofi = pageModel.lofi;
+
+                const { player, action, track } = event;
+
+                if (player == 'track') {
+                    _lofi.handleTrackPlayerAction(_lofi, action, track)
+                } else if (player == 'bg') {
+                    _lofi.handleBgPlayerAction(_lofi, action, track)
+                }
+
+
+            },
+
+            handleTrackPlayerAction(_lofi, action, track) {
+                if (!(_lofi.entities.trackPlayer)) {
+                    _lofi.initTrackPlayer(_lofi, action);
+                }
+
+                switch (action) {
+                    case 'play':
+                        _lofi.entities.trackPlayer.play({ index: 0 })
+                       setTimeout(()=>{
+                        _lofi.state.trackPlayerCurrentTrack = _lofi.entities.bgPlayer.getCurrentTrackInfo().title;
+                       }, 3000);
+                        break;
+                    case 'stop':
+                        _lofi.entities.trackPlayer.stop();
+                        _lofi.state.trackPlayerCurrentTrack = '';
+                        break;
+
+                    default:
+                        break;
+                }
+
+            },
+            handleBgPlayerAction(_lofi, action, track) {
+
+                if (!(_lofi.entities.bgPlayer)) {
+                    _lofi.initBgPlayer(_lofi, action);
+                }
+
+                if(_lofi.entities.bgPlayer.isPlaying()){
+                    action='stop';
+                }
+
+                const idx = _lofi.data.bgPlayList.findIndex((t) => t.title === track);
+
+                switch (action) {
+                    case 'play':
+                        _lofi.entities.bgPlayer.stop()
+                        _lofi.entities.bgPlayer.play({ index: idx })
+                        _lofi.state.bgPlayerCurrentTrack = _lofi.entities.bgPlayer.getCurrentTrackInfo().title;
+                        break;
+                    case 'stop':
+                        _lofi.entities.bgPlayer.stop()
+                        _lofi.state.bgPlayerCurrentTrack = '';
+                        break;
+
+                    default:
+                        break;
+                }
+            },
+
+            addTask: (pageModel, input) => {
+                debugger;
+                console.log(pageModel, input);
+
+                newTaskId = (Math.random() + 1).toString(36).substring(7);
+            },
+            updateTask: (pageModel, task) => {
+                debugger;
+                console.log(pageModel, task)
+                pageModel.lofi.state.showTaskListLoader = true;
+                let tasklist = pageModel.lofi.data.tasklist || [];
+                _task = tasklist.filter(t => t.id == task.id);
+                _task.status = 'DONE';
+                setTimeout(() => { pageModel.lofi.state.showTaskListLoader = false; }, 3000)
+            }
+        },
+        /* ENCRY */
+        encry:{   
+            crypto:{
+                engine: typeof CryptoJS != 'undefined' ? CryptoJS.AES : null
+            },
+            state: {
+                isEncrypting : false,
+                isDecrypting : false
+            },
+            encrypt :{
+                text: '',
+                password: '',
+                algo: 'l-aes'
+            },
+            decrypt :{
+                text: '',
+                password: '',
+                algo: 'l-aes'
+            },
+            generateSecureKey: (pageModel, key)=>{
+                const encry = pageModel.encry;
+                try {
+                    var buf = new Uint8Array(12);
+                    window.crypto.getRandomValues(buf);
+                    encry.encrypt.password = btoa(String.fromCharCode.apply(null, buf));
+                } catch (error) {
+                    
+                }
+                
+            },
+            doEncrypt: async(pageModel)=>{
+                let encry = pageModel.encry;
+                encry.state.isEncrypting = true;
+                const {text, password, algo} = encry.encrypt;
+                debugger;
+                switch (algo) {
+                    case 'l-aes':
+                        const enc = encry.crypto.engine.encrypt(text, password).toString();
+                        encry.encrypt.text = encry.decrypt.text = enc;
+                        encry.encrypt.password = '';
+                        break;
+                    case 'cf-aes':
+                        let res = await encry.cfEncrypt(text, password);
+                        try {
+                            encry.encrypt.text = encry.decrypt.text = res.content;
+                            encry.encrypt.password = '';
+                        } catch (error) {
+                            encry.encrypt.text = text;
+                            encry.encrypt.password = '';
+                        }
+                    break;
+                
+                    default:
+                        break;
+                }
+                encry.state.isEncrypting = false;
+            },
+            cfEncrypt: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                    "action" : "ENCRYPT"
+                });
+                return await fetch('https://encrypt.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            },
+            doDecrypt: async(pageModel)=>{
+                let encry = pageModel.encry;
+                encry.state.isDecrypting = true;
+                const {text, password, algo} = encry.decrypt;
+                debugger;
+                switch (algo) {
+                    case 'l-aes':
+                        const decoded = encry.crypto.engine.decrypt(text, password).toString(CryptoJS.enc.Utf8);
+                        encry.decrypt.text = decoded;
+                        encry.decrypt.password = '';
+                        break;
+                    case 'cf-aes':
+                        let res = await encry.cfDecrypt(text, password);
+                        try {
+                            encry.decrypt.text = res.content;
+                            encry.decrypt.password = '';
+                        } catch (error) {
+                            encry.decrypt.text = text;
+                            encry.encrypt.password = '';
+                        }
+                    break;
+                
+                    default:
+                        break;
+                }
+                encry.state.isDecrypting = false;
+            },
+            cfDecrypt: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                    "action" : "DECRYPT"
+                });
+                return await fetch('https://encrypt.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            }
+        },
+        scratchpad:{
+            crypto:{
+                engine: typeof CryptoJS != 'undefined' ? CryptoJS.AES : null
+            },
+            state: {
+                currentNoteKey: '',
+                currentNotePassword: ''
+            },
+            data: {
+                BASE_KEY:'SCRATCH_BASE_KEY',
+                BASE_PASSWORD : 'F0Jk8HKsb15JAGGD',
+                note_content: ''
+            },
+            decryptNote: async(pageModel)=>{
+                debugger;
+                const pad = pageModel.scratchpad;
+                const password = pad.state.currentNotePassword != '*' ? pad.state.currentNotePassword : pad.data.BASE_PASSWORD;
+                let note = await pad.getNote(pad.data.BASE_KEY);
+
+                pad.data.note_content = '' + pad.crypto.engine.decrypt(note.content,password).toString(CryptoJS.enc.Utf8);
+
+
+            },
+            getNote: async ( key)=>{
+                return await fetch(`https://scratchpad.sajith-rahim.workers.dev?key=${key}`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            },
+            syncNote: async(pageModel, event)=>{
+                debugger;
+                const pad = pageModel.scratchpad;
+                const pass = pad.state.currentNotePassword != '*' ? pad.state.currentNotePassword : pad.data.BASE_PASSWORD;
+                let content = pad.crypto.engine.encrypt('' + event.target.value, pass).toString();
+                const key = pad.state.currentNoteKey != '' ? pad.state.currentNoteKey : pad.data.BASE_KEY;
+                await pad.postNote(content, key )
+            },
+            postNote: async (text, key)=>{
+                req_body = JSON.stringify({
+                    "key": key,
+                    "text": text,
+                });
+                return await fetch('https://scratchpad.sajith-rahim.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application.json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: req_body
+                    }).then((res)=> res.json()).catch(err=> console.log(err))
+            }
+        }
+
+    }
+
+    window.sr_dev_refs = page || {};
+    return page;
+}
+
+</script>
+
+    </body></html>
+
+
+
+<script>
+
+var ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+
+function convertTens(num) {
+  if (num < 10) return ones[num];
+  else if (num >= 10 && num < 20) return teens[num - 10];
+  else {
+    return tens[Math.floor(num / 10)] + " " + ones[num % 10];
+  }
+}
+
+function convertToWord(num) {
+  if (num == 0) return "zero";
+  else return convertTens(num);
+}
+
+function runClock() {
+	var d = new Date();
+	var hours = d.getHours();
+	var minutes = d.getMinutes();
+	var ampm = hours >= 12 ? 'PM' : 'AM';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // the hour '0' should be '12'
+
+	sr_dev_refs.$refs.clock.innerText = `${convertToWord(hours)} : ${convertToWord(minutes)} ${ampm}`;
+}
+
+function initClock() {
+	if (runClock) {
+		setInterval(function () {
+			runClock()
+		}, 1000);
+	}
+}
+
+setTimeout(() => {
+	const clockRef = sr_dev_refs.$refs.clock;
+	if (!clockRef)
+		return
+	initClock()
+}, 1000)
+
+
+
+</script>
