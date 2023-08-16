@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>/dev</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.7.0/cdn/components/include/include.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;         /* Reset default margin on the body element */
+        }
+        iframe {
+            display: block;       /* iframes are inline by default */
+            background: #000;
+            border: none;         /* Reset default border */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <sl-include src="https://srdev-sandbox.pages.dev"></sl-include>
+    <iframe src="https://srdev-sandbox.pages.dev" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
 </body>
 </html>
